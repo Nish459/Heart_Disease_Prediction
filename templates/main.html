@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-slate-200">
+
+  <!-- Website Title -->
+
+  <div class="grid justify-center align-middle bg-blue-900 opacity-75 text-slate-50">
+    <div class="flex justify-center align-middle">
+
+      <h2 class=' mt-5'><span class="text-[50px] ">Heart Disease Predictor</span></h2>
+    </div>
+    <div class='m-[20px] grid justify-center align-middle '>
+      <p class="text-xl">A Machine Learning Web Application that predicits chances of having heart Disease or not, Built with Flask.</p><br>
+        <!-- <p class="ml-[300px] text-xl">(Note:This model is 82.67% accurate)</p> -->
+    </div>
+    
+  </div>
+
+  <!-- Text Area -->
+  <div class="grid justify-center align-middle">
+    <form action="{{ url_for('predict')}}" method="POST" class="m-6 p-4"> 
+      
+        <!-- <label for="age">Age</label> -->
+        <!-- <input type="text" id="age" name="age" placeholder="Your age.."><br> -->
+
+
+
+        <!-- <label for="sex">Sex</label> -->
+        <!-- <select id="sex" name="sex"> -->
+          <!-- <option selected>----select option----</option> -->
+          <!-- <option value="1">Male</option> -->
+          <!-- <option value="0">Female</option> -->
+        <!-- </select><br> -->
+
+
+
+        <label for="cp" class="pr-[40px]">Chest Pain Type</label>
+        <select id="cp" name="cp" class="p-2 m-2 px-[38px] mx-[75px] rounded outline-none w-[20rem]">
+          <option selected>----select option----</option>
+          <option value="0">Typical Angina</option>
+          <option value="1">Atypical Angina</option>
+          <option value="2">Non-anginal Pain</option>
+          <option value="3">Asymtomatic</option>
+        </select><br>
+
+
+
+        <!-- <label for="trestbps">Resting Blood Pressure</label> -->
+        <!-- <input type="text" id="trestbps" name="trestbps" placeholder="A number in range [94-200] mmHg"><br> -->
+
+
+
+        <label for="chol" class="pr-[20px] pt-4">Serum Cholesterol</label>
+        <input type="text" id="chol" name="chol" class="p-2 m-2 mx-[75px] px-[30px] w-[20rem] rounded outline-none" placeholder="A number in range [126-564] mg/dl"><br>
+
+
+<!-- 
+        <label for="fbs">Fasting Blood Sugar</label>
+        <select id="fbs" name="fbs">
+          <option selected>----select option----</option>
+          <option value="1">Greater than 120 mg/dl</option>
+          <option value="0">Less than 120 mg/dl</option>
+        </select><br> -->
+
+
+
+        <!-- <label for="restecg">Resting ECG Results</label>
+        <select id="restecg" name="restecg">
+          <option selected>----select option----</option>
+          <option value="0">Normal</option>
+          <option value="1">Having ST-T wave abnormality</option>
+          <option value="2">Probable or definite left ventricular
+            hypertrophy</option>
+        </select><br> -->
+
+
+
+        <label for="thalach">Max Heart Rate </label>
+        <input class="p-2 m-2 mx-[115px] px-[30px] rounded outline-none w-[20rem]" type="text" id="thalach" name="thalach" placeholder="A number in range [71-202] bpm"><br>
+
+
+        <label for="exang">Exercise-induced Angina</label>
+        <select id="exang" name="exang" class="w-[20rem] p-2 m-2 mx-[50px] px-[40px] rounded outline-none">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+
+        <label for="oldpeak">ST depression</label>
+        <input class="w-[20rem] p-2 m-2 mx-[125px] px-[30px] rounded outline-none" type="text" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0-6.2]"><br>
+
+
+
+        <!-- <label for="slope">slope of the peak exercise ST segment</label>
+        <select id="slope" name="slope">
+          <option selected>----select option----</option>
+          <option value="0">Upsloping</option>
+          <option value="1">Flat</option>
+          <option value="2">Downsloping</option>
+        </select><br> -->
+        
+
+        <label for="ca">Number of Major vessels</label>
+        <input type="text" id="ca" name="ca" placeholder="Typically in [0-4]" class="w-[20rem] p-2 m-2 px-[30px]  mx-[50px] rounded outline-none"><br> 
+                          
+
+
+        <!-- <label for="thal">Thalassemia</label> 
+        <select id="thal" name="thal">
+          <option selected>----select option----</option>
+          <option value="0">Normal</option>
+          <option value="1">Fixed Defect</option> 
+          <option value="2">Reversible Defect</option>  
+        </select><br> -->
+
+      
+      <div class="flex justify-center align-middle mt-8 ">
+
+        <input type="submit" value="Predict" class="bg-blue-900 opacity-75 text-xl p-3 px-[60px] text-slate-50 rounded">
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
